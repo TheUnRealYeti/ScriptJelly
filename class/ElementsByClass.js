@@ -296,6 +296,22 @@ function elementsByClass(className, container, getLive) {
      * - a lively-updated HTMLCollection of Element objects, if true; or 
      * - a static NodeList or Array of Element objects, if false. 
      * 
+     * If the "getLive" parameter is undefined or not a Boolean value, this 
+     * method may return either a lively-updated or a static list of Element 
+     * objects with the target CSS class name(s). In this case, the method 
+     * prioritizes more modern and computationally faster JavaScript methods 
+     * over legacy and slower ones. More specifically, checked in the following 
+     * order: 
+     * - A live HTMLCollection of Element objects is returned if the Element 
+     *   class's or Document interface's getElementsByClassName() method is 
+     *   supported. 
+     * - A static NodeList of Element objects is returned if the Element 
+     *   class's or Document interface's querySelectorAll() method is 
+     *   supported. 
+     * - A static Array of Element objects is returned if the Element class's 
+     *   or Document interface's getElementsByTagName() method is supported and 
+     *   the external polyfill containsCSSClass() function is loaded. 
+     * 
      * Returns null if none of the JavaScript methods used for retrieving a 
      * list of the target Element objects and relied on by the called methods 
      * are supported. 
