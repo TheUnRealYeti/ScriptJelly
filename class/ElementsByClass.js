@@ -290,12 +290,15 @@ function elementsByClass(className, container, getLive) {
      * hierarchy of the "container" parameter's argument object. 
      * 
      * @returns {HTMLCollection<Element> | NodeList<Element> | Array<Element> | 
-     * undefined | null} - 
+     * null} - 
      * If the "getLive" parameter has a Boolean value passed to it, this method 
      * will try to return: 
      * - a lively-updated HTMLCollection of Element objects, if true; or 
      * - a static NodeList or Array of Element objects, if false. 
      * 
+     * Returns null if none of the JavaScript methods used for retrieving a 
+     * list of the target Element objects and relied on by the called methods 
+     * are supported. 
      */
     this.tryMethods = function() {
 
