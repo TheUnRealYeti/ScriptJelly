@@ -275,7 +275,7 @@ function containsCSSClass(elementTarget, searchClass, singleMatch) {
      *   before 3 and a CSS class name entry violates the syntax rules for a 
      *   CSS 1/2/2.1 class name. 
      * 
-     * @returns {Array<string} - 
+     * @returns {Array<string>} - 
      * An Array of non-empty, whole-word, whitespace-trimmed String entries 
      * that each indicate a CSS class name to be found in the "elementTarget" 
      * parameter's Element object's "class" attribute. Intended to replace the 
