@@ -49,7 +49,7 @@ if (!String.prototype.trim) {
  * Contains one or more CSS class names, which must be separated from each 
  * other by whitespace characters, that the function will try to find inside of 
  * the "elementTarget" parameter's value. Leading and trailing whitespace is 
- * trimmed from a String entry, and CSS class name entries are apart by 
+ * trimmed from a String entry, and CSS class name entries are split apart by 
  * whitespace characters into an Array of CSS class name entries for the search 
  * process. 
  * 
@@ -178,7 +178,7 @@ function containsCSSClass(elementTarget, searchClass, singleMatch) {
      * checked. 
      * @param {number} paramNum - The number of the parameter to which 
      * "argValue" was passed in the order of the parent function definition. 
-     * Used for exception message printouts.
+     * Used for exception message printouts, e.g. "Parameter 1." 
      * @param {string} paramName - The name of the parameter to which 
      * "argValue" was passed in the parent function definition. Used for 
      * exception message printouts.
@@ -190,7 +190,7 @@ function containsCSSClass(elementTarget, searchClass, singleMatch) {
      * @throws - 
      * - A RangeError exception if "argValue" is an empty string and 
      *   "emptyCheck" is set to true. 
-     * - A RangeError if "argValue" is an empty array. 
+     * - A RangeError exception if "argValue" is an empty array. 
      * - A TypeError exception if "argValue" is neither a string nor an Array. 
      * 
      * @returns {Array<string>} - 
@@ -199,7 +199,7 @@ function containsCSSClass(elementTarget, searchClass, singleMatch) {
      * string that will have any leading or trailing whitespace removed. Since 
      * only one copy of each CSS class name is necessary for an Element object 
      * to inherit the class's styling properties, the first instance of any CSS 
-     * class name encountered will be kept and any of the class's duplicate 
+     * class name encountered will be kept, and any of the class's duplicate 
      * entries from the original Array will be removed. 
      */
     this.checkClassParameter = function(argValue, paramNum, paramName, 
